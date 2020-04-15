@@ -5,10 +5,10 @@ Both of these dictionaries will have the same form, and might look something lik
 
 ```python
 {
-  'eggs': 5,
-  'butter': 10,
-  'sugar': 8,
-  'flour': 15
+  "eggs": 5,
+  "butter": 10,
+  "sugar": 8,
+  "flour": 15
 }
 ```
 
@@ -22,8 +22,8 @@ For example
 ```python
 # should return 0 since we don't have enough butter!
 recipe_batches(
-  { 'milk': 100, 'butter': 50, 'flour': 5 },
-  { 'milk': 138, 'butter': 48, 'flour': 51 }
+  { "milk": 100, "butter": 50, "flour": 5 },
+  { "milk": 138, "butter": 48, "flour": 51 }
 )
 ```
 

@@ -2,13 +2,13 @@ import unittest
 from collections import namedtuple
 from knapsack import knapsack_solver
 
-Item = namedtuple('Item', ['index', 'size', 'value'])
+Item = namedtuple("Item", ["index", "size", "value"])
 
 
 class Test(unittest.TestCase):
 
     def setUp_small(self):
-        file_contents = open('data/small1.txt', 'r')
+        file_contents = open("data/small1.txt", "r")
         self.small_1_items = []
 
         for line in file_contents.readlines():
@@ -17,7 +17,7 @@ class Test(unittest.TestCase):
 
         file_contents.close()
 
-        file_contents = open('data/small2.txt', 'r')
+        file_contents = open("data/small2.txt", "r")
         self.small_2_items = []
 
         for line in file_contents.readlines():
@@ -26,7 +26,7 @@ class Test(unittest.TestCase):
 
         file_contents.close()
 
-        file_contents = open('data/small3.txt', 'r')
+        file_contents = open("data/small3.txt", "r")
         self.small_3_items = []
 
         for line in file_contents.readlines():
@@ -41,7 +41,7 @@ class Test(unittest.TestCase):
         del self.small_3_items
 
     def setUp_medium(self):
-        file_contents = open('data/medium1.txt', 'r')
+        file_contents = open("data/medium1.txt", "r")
         self.medium_1_items = []
 
         for line in file_contents.readlines():
@@ -50,7 +50,7 @@ class Test(unittest.TestCase):
 
         file_contents.close()
 
-        file_contents = open('data/medium2.txt', 'r')
+        file_contents = open("data/medium2.txt", "r")
         self.medium_2_items = []
 
         for line in file_contents.readlines():
@@ -59,7 +59,7 @@ class Test(unittest.TestCase):
 
         file_contents.close()
 
-        file_contents = open('data/medium3.txt', 'r')
+        file_contents = open("data/medium3.txt", "r")
         self.medium_3_items = []
 
         for line in file_contents.readlines():
@@ -74,7 +74,7 @@ class Test(unittest.TestCase):
         del self.medium_3_items
 
     def setUp_large(self):
-        file_contents = open('data/large1.txt', 'r')
+        file_contents = open("data/large1.txt", "r")
         self.large_1_items = []
 
         for line in file_contents.readlines():
@@ -91,8 +91,8 @@ class Test(unittest.TestCase):
         self.assertEqual(
             knapsack_solver(self.small_1_items, 100),
             {
-                'Value': 197,
-                'Chosen': [
+                "Value": 197,
+                "Chosen": [
                     1,
                     7,
                     8,
@@ -102,8 +102,8 @@ class Test(unittest.TestCase):
         self.assertEqual(
             knapsack_solver(self.small_2_items, 100),
             {
-                'Value': 259,
-                'Chosen': [
+                "Value": 259,
+                "Chosen": [
                     1,
                     9,
                     10,
@@ -113,8 +113,8 @@ class Test(unittest.TestCase):
         self.assertEqual(
             knapsack_solver(self.small_3_items, 100),
             {
-                'Value': 129,
-                'Chosen': [
+                "Value": 129,
+                "Chosen": [
                     4,
                     5,
                     7,
@@ -129,8 +129,8 @@ class Test(unittest.TestCase):
         self.assertEqual(
             knapsack_solver(self.medium_1_items, 100),
             {
-                'Value': 1042,
-                'Chosen': [
+                "Value": 1042,
+                "Chosen": [
                     44,
                     49,
                     60,
@@ -152,8 +152,8 @@ class Test(unittest.TestCase):
         self.assertEqual(
             knapsack_solver(self.medium_2_items, 100),
             {
-                'Value': 969,
-                'Chosen': [
+                "Value": 969,
+                "Chosen": [
                     1,
                     10,
                     27,
@@ -173,8 +173,8 @@ class Test(unittest.TestCase):
         self.assertEqual(
             knapsack_solver(self.medium_3_items, 100),
             {
-                'Value': 868,
-                'Chosen': [
+                "Value": 868,
+                "Chosen": [
                     9,
                     14,
                     15,
@@ -201,8 +201,8 @@ class Test(unittest.TestCase):
         self.assertEqual(
             knapsack_solver(self.large_1_items, 100),
             {
-                'Value': 2640,
-                'Chosen': [
+                "Value": 2640,
+                "Chosen": [
                     44,
                     83,
                     104,
@@ -247,5 +247,5 @@ class Test(unittest.TestCase):
         self.cleanUp_large()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -20,4 +20,4 @@ if __name__ == "__main__":
             )
         )
     else:
-        print('Usage: eating_cookies.py [num_cookies]')
+        print("Usage: eating_cookies.py [num_cookies]")

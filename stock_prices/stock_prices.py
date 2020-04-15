@@ -27,15 +27,15 @@ def find_max_profit(prices):
     return best_profit_so_far
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # This is just some code to accept inputs from the command line
-    parser = argparse.ArgumentParser(description='Find max profit from prices.')
+    parser = argparse.ArgumentParser(description="Find max profit from prices.")
     parser.add_argument(
-        'integers',
-        metavar='N',
+        "integers",
+        metavar="N",
         type=int,
-        nargs='+',
-        help='an integer price',
+        nargs="+",
+        help="an integer price",
     )
     args = parser.parse_args()
 
