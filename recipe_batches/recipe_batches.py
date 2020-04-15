@@ -4,7 +4,28 @@ import math
 
 
 def recipe_batches(recipe, ingredients):
-    pass
+
+    max_batches = math.inf
+
+    # check each item in recipe vs ingredients...
+    for name in recipe.keys():
+
+        # default to 0 for missing ingredients
+        batches = 0
+
+        if name in ingredients:
+            # calclate the _integer_ count of batches available
+            batches = ingredients[name] // recipe[name]
+
+        # the lowest _ingredient_ batches limits the max _total_ batches
+        if batches < max_batches:
+            max_batches = batches
+
+        # if none available, short-circuit
+        if max_batches < 1:
+            break
+
+    return max_batches
 
 
 if __name__ == "__main__":
