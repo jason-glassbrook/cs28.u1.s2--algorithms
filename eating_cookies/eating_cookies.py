@@ -75,6 +75,9 @@ import sys
 # efficient than the naive recursive solution.
 def eating_cookies(n, cache=None):
 
+    if cache is None:
+        cache = [None for __ in range(n + 1)]
+
     r = None
 
     #=======================================
@@ -82,16 +85,26 @@ def eating_cookies(n, cache=None):
 
     if n <= 0:
         r = 1
+
     elif n == 1:
         r = 1
+
     elif n == 2:
         r = 2
+
+    elif cache[n]:
+        r = cache[n]
 
     #=======================================
     # RECURSIVE CASE
 
     else:
-        r = eating_cookies(n - 1) + eating_cookies(n - 2) + eating_cookies(n - 3)
+        r = sum((
+            eating_cookies(n - 1, cache),
+            eating_cookies(n - 2, cache),
+            eating_cookies(n - 3, cache),
+        ))
+        cache[n] = r
 
     return r
 
